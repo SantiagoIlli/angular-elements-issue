@@ -1,4 +1,12 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+
+<orange-with-blue-inside  class="myAbsolute" *axLazyElement="'assets/orange-with-blue.js'" fxFlex="grow"></orange-with-blue-inside>
+
+<div *ngIf="showBlue" >
+  <blue-element
+          style="position: absolute; top: 50vh; left: 50vw;
+   width: 50vw; height: 50vh" *axLazyElement="'assets/blue.js'"></blue-element>
+</div>
+<div
+        (click)="showBlue = true"
+        style="background: brown; width: 100vw; height: 10vh;top: 0; z-index: 1; position: absolute">
+  Click me to add the blue element, out of the orange-with-blue element </div>
